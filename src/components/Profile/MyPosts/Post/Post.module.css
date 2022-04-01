@@ -1,0 +1,9 @@
+.content {
+  background-color: aqua;
+  grid-area: c;
+}
+.item img {
+  height: 50px;
+
+  border-radius: 5px;
+}
