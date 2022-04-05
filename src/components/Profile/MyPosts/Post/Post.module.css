@@ -2,7 +2,9 @@
   background-color: aqua;
   grid-area: c;
 }
+
 .item img {
+  margin-top: 15px;
   height: 50px;
 
   border-radius: 5px;
