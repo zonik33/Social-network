@@ -1,0 +1,15 @@
+.alldialogs {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 2fr 20fr;
+}
+
+.dialogs_item {}
+
+.dialog {}
+
+.message {}
+
+.dialog img {
+    height: 50px;
+}
