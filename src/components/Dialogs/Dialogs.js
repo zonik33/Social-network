@@ -1,9 +1,17 @@
 import s from './Dialogs.module.css';
 import Message from './Message/Message';
 import DialogItem from './Dialogitem/Dialogitem';
+import React from 'react';
 
 
 const Dialogs = (props) => {
+
+    const ref = React.createRef();
+    let onClickButton = () => {
+        let text = ref.current.value;
+        alert(text);
+    }
+
     let dialogsElements = props.state.dialogsData.map( d =>  <DialogItem name = {d.name} id = {d.id}/>  );
     let messageElements = props.state.messageData.map( m => <Message message ={m.message}/>)
     return (
@@ -18,7 +26,16 @@ const Dialogs = (props) => {
                 { messageElements }
                 
             </div>
-        </div>
+            <div>
+                <textarea ref={ref}></textarea>
+            </div>
+            <div>
+                <button onClick={onClickButton}>
+                    Тык
+                </button>
+            </div>
+            </div>
+        
     )
 
 }

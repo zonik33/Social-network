@@ -18,6 +18,12 @@ let state = {
             { id: 1, name: 'Рома' },
             { id: 2, name: 'Кирилл' }
         ],
-    }
+    },
+    sidebar: {
+        nameFriends: [
+            { id: 1, name: 'Рома' },
+            { id: 2, name: 'Кирилл' }
+        ],
+    },
 }
 export default state;

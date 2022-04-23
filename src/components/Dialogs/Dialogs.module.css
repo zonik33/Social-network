@@ -4,11 +4,17 @@
     grid-template-columns: 2fr 20fr;
 }
 
-.dialogs_item {}
+.dialogs_item {
+    padding: 0px;
+}
 
-.dialog {}
+.dialog {
+    padding: 0px;
+}
 
-.message {}
+.message {
+    padding: 0px;
+}
 
 .dialog img {
     height: 50px;
