@@ -8,8 +8,9 @@ const Dialogs = (props) => {
 
     const ref = React.createRef();
     let onClickButton = () => {
+        debugger;
         let text = ref.current.value;
-        alert(text);
+        props.addMessage(text);
     }
 
     let dialogsElements = props.state.dialogsData.map( d =>  <DialogItem name = {d.name} id = {d.id}/>  );
