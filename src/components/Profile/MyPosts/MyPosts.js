@@ -6,9 +6,10 @@ const MyPosts = (props) => {
 
 // ________Кнопка с колбеком___________
   const ref = React.createRef();
-  let addPost = () =>{
+  let addPost = () => {
+      debugger;
     let text = ref.current.value;  
-    alert(text);  
+    props.addPost(text);
   }
 
 
