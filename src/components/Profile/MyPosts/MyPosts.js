@@ -1,15 +1,14 @@
 import s from "./MyPosts.module.css";
 import Post from "./Post/Post";
 import React from 'react';
+import {updateNewPostText} from "../../../redux/state";
 
 const MyPosts = (props) => {
 
 // ________Кнопка с колбеком___________
   const ref = React.createRef();
   let addPost = () => {
-
-    let text = ref.current.value;  
-    props.addPost(text);
+    props.addPost();
   }
 
 
@@ -17,13 +16,16 @@ let postElements =
 props.postData.map( (p) => <Post message = {p.message} like = {p.like} />);
 
 
-
-
-  return (
+  let onPostChange = () => {
+    let text = ref.current.value;
+      props.updateNewPostText(text);
+  }
+    return (
     <div className={s.content}>
       <div className={s.item}><h3>My posts</h3></div>
       <div>
-      <textarea ref={ref}></textarea>
+      <textarea onChange={onPostChange} ref={ref} value={props.newPostText} />
+
         </div>
 
 

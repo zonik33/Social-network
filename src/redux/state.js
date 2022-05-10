@@ -7,7 +7,9 @@ let state = {
             {id: 2, message: 'Its my first post', like: '25'},
             {id: 3, message: 'HEY', like: '2'},
             {id: 4, message: 'HOW ARE U?', like: '111'}
-        ]
+        ],
+        newPostText: "artem lsad"
+
 
     },
     messagePage: {
@@ -20,6 +22,7 @@ let state = {
             { id: 1, name: 'Рома' },
             { id: 2, name: 'Кирилл' }
         ],
+        newTextMessage: "dada ya"
     },
     sidebar: {
         nameFriends: [
@@ -28,23 +31,32 @@ let state = {
         ],
     },
 }
-export let addMessage = (postMessage) => {
-    debugger;
+window.state = state;
+export let addMessage = () => {
     let newPost = {
         id: 4,
-        message: postMessage
+        message: state.messagePage.newTextMessage,
     };
     state.messagePage.messageData.push(newPost);
+    state.messagePage.newTextMessage = '';
     rerenderEntireTree(state);
 }
-export let addPost = (postMessage) => {
+export let addPost = () => {
     let newPost = {
         id: 5,
-        message: postMessage,
+        message: state.profilePage.newPostText,
         like:   0
     };
-
     state.profilePage.postData.push(newPost);
+    state.profilePage.newPostText = '';
+    rerenderEntireTree(state);
+}
+export let updateNewPostText = (newText) => {
+    state.profilePage.newPostText = newText;
+    rerenderEntireTree(state);
+}
+export let updateNewMessageText = (newText) => {
+    state.messagePage.newTextMessage = newText;
     rerenderEntireTree(state);
 }
 export default state;
