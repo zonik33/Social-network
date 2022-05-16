@@ -1,4 +1,4 @@
-import state, {subcribe} from './redux/state';
+import store from './redux/state';
 import React from 'react';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
@@ -13,18 +13,18 @@ let rerenderEntireTree = (state) => {
 
         <React.StrictMode>
             <App state = {state}
-                 addPost = {addPost}
-                 updateNewMessageText = {updateNewMessageText}
-                 updateNewPostText = {updateNewPostText}
-                 addMessage = {addMessage}/>
+                 addPost = {store.addPost.bind(store)}
+                 updateNewMessageText = {store.updateNewMessageText.bind(store)}
+                 updateNewPostText = {store.updateNewPostText.bind(store)}
+                 addMessage = {store.addMessage.bind(store)}/>
 
         </React.StrictMode>,
         document.getElementById('root')
     );
 }
 
-rerenderEntireTree(state);
-subcribe(rerenderEntireTree);
+rerenderEntireTree(store.getState());
+store.subcribe(rerenderEntireTree);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
