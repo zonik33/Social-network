@@ -9,7 +9,8 @@ const Dialogs = (props) => {
 
     const ref = React.createRef();
     let onClickButton = () => {
-    props.addMessage();
+    props.dispatch({ type: 'ADD-MESSAGE' });
+        debugger;
     }
 
     let dialogsElements = props.state.dialogsData.map( d =>  <DialogItem name = {d.name} id = {d.id}/>  );
@@ -17,7 +18,7 @@ const Dialogs = (props) => {
 
    let onChangeClick = () => {
        let text = ref.current.value;
-       props.updateNewMessageText(text);
+       props.dispatch({type: 'UPDATE-NEW-MESSAGE-TEXT', newText: text});
    }
     return (
         <div className={s.alldialogs}>
