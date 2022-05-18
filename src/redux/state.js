@@ -12,7 +12,7 @@ let store = {
                 {id: 3, message: 'HEY', like: '2'},
                 {id: 4, message: 'HOW ARE U?', like: '111'}
             ],
-            newPostText: 'artem lsad'
+            newPostText: 'Check'
         },
         messagePage: {
             messageData: [
@@ -24,7 +24,7 @@ let store = {
                 { id: 1, name: 'Рома' },
                 { id: 2, name: 'Кирилл' }
             ],
-            newTextMessage: "dada ya"
+            newTextMessage: 'Check'
         },
         sidebar: {
             nameFriends: [
