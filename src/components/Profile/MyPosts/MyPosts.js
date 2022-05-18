@@ -1,14 +1,16 @@
 import s from "./MyPosts.module.css";
 import Post from "./Post/Post";
 import React from 'react';
-import {updateNewPostText} from "../../../redux/state";
+import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../redux/state";
+
+
 
 const MyPosts = (props) => {
 
 // ________Кнопка с колбеком___________
   const ref = React.createRef();
   let addPost = () => {
-    props.dispatch({type:'ADD-POST'});
+    props.dispatch(addPostActionCreator());
   }
 
 
@@ -18,7 +20,7 @@ props.postData.map( (p) => <Post message = {p.message} like = {p.like} />);
 
   let onPostChange = () => {
     let text = ref.current.value;
-      props.dispatch({type: 'UPDATE-NEW-POST-TEXT', newText: text});
+      props.dispatch(updateNewPostTextActionCreator(text));
   }
     return (
     <div className={s.content}>
