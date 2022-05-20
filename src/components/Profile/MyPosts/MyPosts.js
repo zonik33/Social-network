@@ -9,18 +9,19 @@ const MyPosts = (props) => {
 
 // ________Кнопка с колбеком___________
 
-  let addPost = () => {
-    props.dispatch(addPostActionCreator());
+  let onAddPost = () => {
+    props.addPost();
+    //props.dispatch(addPostActionCreator());
   }
 
 
-let postElements = 
-props.postData.map( (p) => <Post message = {p.message} like = {p.like} />);
+let postElements = props.postData.map( (p) => <Post message = {p.message} like = {p.like} />);
 
 
   let onPostChange = (e) => {
     let text = e.target.value;
-      props.dispatch(updateNewPostTextActionCreator(text));
+    props.updateNewPostText(text);
+
   }
     return (
     <div className={s.content}>
@@ -32,7 +33,7 @@ props.postData.map( (p) => <Post message = {p.message} like = {p.like} />);
 
 
         <div className="_____ПРОВЕРКА КНОООПКИ_________">
-        <button onClick = { addPost }>Add</button>  
+        <button onClick = { onAddPost }>Add</button>
       </div>
 
 
