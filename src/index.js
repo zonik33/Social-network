@@ -5,17 +5,17 @@ import reportWebVitals from './reportWebVitals';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import {addPost, updateNewMessageText, updateNewPostText} from "./redux/store";
-import {addMessage} from "./redux/store";
+import {Provider} from "react-redux";
 
 let rerenderEntireTree = (state) => {
     ReactDOM.render(
 
         <React.StrictMode>
+            <Provider store={store}>
             <App store = {store}
                 state = {state}
                  dispatch = {store.dispatch.bind(store)} />
-
+                </Provider>
         </React.StrictMode>,
         document.getElementById('root')
     );

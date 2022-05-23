@@ -1,5 +1,4 @@
-let defaultState = {
-}
+let defaultState = {}
 
 const sidebarReducer = (state = defaultState, action) => {
 
