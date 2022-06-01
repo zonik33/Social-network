@@ -2,34 +2,32 @@ const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT';
 const ADD_MESSAGE = 'ADD-MESSAGE';
 
 let defaultState = {
-        messageData: [
-            { id: 1, message: 'Привет ХИХХИ' },
-            { id: 2, message: 'Привет Хфвфыв' },
-            { id: 3, message: 'Привет ыЧЕЛ!' }
-        ],
-        dialogsData: [
-            { id: 1, name: 'Рома' },
-            { id: 2, name: 'Кирилл' }
-        ],
-        newTextMessage: 'Check'
+    messageData: [
+        {id: 1, message: 'Привет ХИХХИ'},
+        {id: 2, message: 'Привет Хфвфыв'},
+        {id: 3, message: 'Привет ыЧЕЛ!'}
+    ],
+    dialogsData: [
+        {id: 1, name: 'Рома'},
+        {id: 2, name: 'Кирилл'}
+    ],
+    newTextMessage: 'Check'
 }
 
 const dialogsReducer = (state = defaultState, action) => {
+
     switch (action.type) {
         case ADD_MESSAGE:
-            let newPost = {
-                id: 4,
-                message: state.newTextMessage,
-            };
-            let stateCopy = {...state}
-            stateCopy.messageData = [...state.messageData]
-            stateCopy.messageData.push(newPost);
-            stateCopy.newTextMessage = '';
-            return stateCopy;
+
+            return {
+                ...state,
+                newTextMessage: '',
+                messageData: [...state.messageData, {id: 4, message: state.newTextMessage,}]
+            }
         case UPDATE_NEW_MESSAGE_TEXT: {
-            let stateCopy = {...state}
-            stateCopy.newTextMessage = action.newText;
-            return stateCopy;
+            return  {
+                ...state,
+                newTextMessage: action.newText};
         }
         default:
             return state;
