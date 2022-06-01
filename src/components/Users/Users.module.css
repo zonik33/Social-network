@@ -1,0 +1,13 @@
+.forFullblock{
+}
+.fullblock{
+    margin-top: 25px;
+}
+.img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50px;
+}
+.nameAndStatus{
+}
