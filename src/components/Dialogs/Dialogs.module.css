@@ -17,5 +17,8 @@
 }
 
 .dialog img {
-    height: 50px;
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 0px;
 }

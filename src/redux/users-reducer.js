@@ -3,40 +3,7 @@ const UNFOLLOW = 'UNFOLLOW';
 const SET_USERS = 'SET-USERS';
 
 let defaultState = {
-    users: [
-        {
-            id: 1,
-            photoUrl: "https://mir-s3-cdn-cf.behance.net/project_modules/disp/ea7a3c32163929.567197ac70bda.png",
-            followed: true,
-            fullName: 'Рома',
-            status: 'Im fine',
-            location: {city: 'Russia', country: 'Penza'}
-        },
-        {
-            id: 2,
-            photoUrl: "https://mir-s3-cdn-cf.behance.net/project_modules/disp/ea7a3c32163929.567197ac70bda.png",
-            followed: true,
-            fullName: 'Кирилл',
-            status: 'Im fine too',
-            location: {city: 'Russia', country: 'Moscow'}
-        },
-        {
-            id: 3,
-            photoUrl: "https://mir-s3-cdn-cf.behance.net/project_modules/disp/ea7a3c32163929.567197ac70bda.png",
-            followed: false,
-            fullName: 'Дима',
-            status: 'Im fine too',
-            location: {city: 'Russia', country: 'Penza'}
-        },
-        {
-            id: 4,
-            photoUrl: "https://mir-s3-cdn-cf.behance.net/project_modules/disp/ea7a3c32163929.567197ac70bda.png",
-            followed: false,
-            fullName: 'Влад',
-            status: 'Im fine too',
-            location: {city: 'Russia', country: 'Penza'}
-        },
-    ],
+    users: [],
 
 }
 const usersReducer = (state = defaultState, action) => {
@@ -51,9 +18,8 @@ const usersReducer = (state = defaultState, action) => {
                     return u;
                 })
             }
-            debugger;
+
         case UNFOLLOW:
-            debugger;
             return {
                 ...state,
                 users: state.users.map(u => {
@@ -64,7 +30,6 @@ const usersReducer = (state = defaultState, action) => {
                 })
 
             }
-            debugger;
         case SET_USERS: {
             return {...state, users: [...action.users]}
         }

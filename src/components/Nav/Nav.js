@@ -26,7 +26,7 @@ const Nav = (props) => {
       <div className={s.itemSideBar}>
         <li>Friends Online: </li>
         <div className= {s.imgNameFriends}>
-          {friendCheker}
+          <li>{props.sidebar} </li>
         </div>
       </div>
     </nav>

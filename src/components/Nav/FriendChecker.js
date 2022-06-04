@@ -1,13 +1,12 @@
-
-let friendDobuleCheck = () => {
-}
-
+import React from "react";
 const friendCheker = (props) => {
-    return(
-        <div>
-            КУ
-        </div>
-    )
+    return <div>
+        {(
+            <div>
+                КУsdasdasdasdas
+            </div>
+        )
+        }
+    </div>
 }
-
-export default friendCheker
+export default friendCheker;
