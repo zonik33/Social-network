@@ -18,15 +18,13 @@ class Users extends React.Component {
         })
     }
 
-
     render() {
         let pagesCount = Math.ceil(this.props.totalUsersCount / this.props.pageSize);
-
-
         let pages = [];
         for (let i = 1; i <= pagesCount&pages.length < 10; i++){
             pages.push(i);
         }
+
         return <div>
             <div>
                 { pages.map(p => {
