@@ -11,6 +11,8 @@
 }
 
 .app-wrapper-content {
+  height: 1080px;
+  width: 1920px;
   background-color: aqua;
   grid-area: c;
 }
