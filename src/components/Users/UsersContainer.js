@@ -26,9 +26,9 @@ class UsersContainer extends React.Component {
 
     onPageChanged = (pageNumber) => {
         this.props.setCurrentPage(pageNumber);
-        this.props.toggleIsFetchingAC(true);
+        this.props.toggleIsFetching(true);
         axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`).then(response => {
-            this.props.toggleIsFetchingAC(false);
+            this.props.toggleIsFetching(false);
             this.props.setUsers(response.data.items);
         })
     }
@@ -60,31 +60,6 @@ let mapStateToProps = (state) => {
     }
 }
 
-/*
-let mapDispatchToProps = (dispatch) => {
-
-    return {
-        follows: (userId) => {
-            dispatch(followAC(userId));
-        },
-        unfollow: (userId) => {
-            dispatch(unfollowAC(userId));
-        },
-        setUsers: (usersId) => {
-            dispatch(setUsersAC(usersId));
-        },
-        setCurrentPage: (pageNumber) => {
-            dispatch(setCurrentPageAC(pageNumber));
-        },
-        setTotalUsersCount: (totalCount) => {
-            dispatch(setTotalUsersCountAC(totalCount));
-        },
-        toggleIsFetchingAC: (isFetching) => {
-            dispatch(toggleIsFetchingAC(isFetching));
-        },
-    }
-}
-*/
 
 export default connect(mapStateToProps,
     {follow, unfollow, setUsers, setCurrentPage, setTotalUsersCount, toggleIsFetching})(UsersContainer);
