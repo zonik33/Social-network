@@ -27,12 +27,14 @@ let Users = (props) => {
                 </NavLink>
                     </div>
                 <div>
-                    {u.followed
+
+                    {
+                        u.followed
                         ? <button onClick={() => {
                             props.unfollow(u.id)
                         }}>Unfollow</button>
                         : <button onClick={() => {
-                            props.follows(u.id);
+                            props.follow(u.id)
                         }}>Follow</button>}
                 </div>
                  </span>
