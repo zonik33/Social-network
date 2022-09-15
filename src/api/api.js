@@ -15,32 +15,28 @@ export const usersAPI = {
             .then(response => {
                 return response.data;
             });
-    }
+    },
+
+    follow(userId) {
+        return instance.post(`follow/${userId}`)
+
+    },
+    unfollow(userId) {
+        return instance.delete(`follow/${userId}`)
+
+    },
+    getProfile(userId) {
+        return instance.get(`profile/${userId}`)
+
+    },
 }
 
 
-// export const usersCheck = {
-//
-//     followUser(u) {
-//         return instance.post(`follow/${u.id}`, {},)
-//             .then(response => {
-//                 return response.data;
-//             });
-//     },
-//     unfollowUser(u) {
-//
-//         return instance.delete(`follow/${u.id}`,)
-//             .then(response => {
-//                 return response.data;
-//             });
-//     }
-// }
-
-export const authMe = {
+export const authAPI = {
     getMe() {
-        return instance.get(`auth/me`, {})
+        return instance.get(`auth/me`)
             .then(response => {
                 return response.data;
             });
-    }
+    },
 }
