@@ -3,9 +3,9 @@ const ADD_MESSAGE = 'ADD-MESSAGE';
 
 let defaultState = {
     messageData: [
-        {id: 1, message: 'Привет ХИХХИ'},
-        {id: 2, message: 'Привет Хфвфыв'},
-        {id: 3, message: 'Привет ыЧЕЛ!'}
+        {id: 1, message: 'Hi'},
+        {id: 2, message: 'Yo'},
+        {id: 3, message: 'Howau?'}
     ],
     dialogsData: [
         {id: 1, name: 'Рома'},
