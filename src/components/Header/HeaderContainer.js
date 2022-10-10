@@ -1,6 +1,6 @@
 import Header from "./Header";
 import React from "react";
-import {getAuthUserData} from "../../redux/auth-reducer";
+import {getAuthUserData, logout} from "../../redux/auth-reducer";
 import {connect} from "react-redux";
 
 
@@ -19,4 +19,4 @@ const mapStateToProps = (state) => ({
         login: state.auth.login
 })
 export default connect(mapStateToProps, {
-    getAuthUserData})(HeaderContainer);
+    getAuthUserData, logout})(HeaderContainer);
