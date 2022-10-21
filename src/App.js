@@ -14,6 +14,7 @@ import {connect} from "react-redux";
 import {compose} from "redux";
 import {initializeApp} from "./redux/app-reducer";
 import Preloader from "./components/common/Preloader/Preloader";
+import withRouter from "./components/Users/withRouter";
 
 
 class App extends Component {
@@ -25,7 +26,6 @@ class App extends Component {
             return <Preloader/>
         }
         return (
-            <BrowserRouter>
                 <div className="wrapper">
                     <HeaderContainer/>
                     <Nav/>
@@ -47,12 +47,12 @@ class App extends Component {
                         </Routes>
                     </div>
                 </div>
-            </BrowserRouter>
+
         );
     }
 }
 const mapStateToProps = (state) => ({
   initialized: state.app.initialized,
 })
-export default compose(
+export default compose(withRouter,
     connect(mapStateToProps,{initializeApp}))(App);
