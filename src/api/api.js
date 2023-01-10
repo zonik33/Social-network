@@ -1,6 +1,5 @@
-import * as axios from "axios";
-
-
+import React from "react";
+import axios  from "axios";
 
 const instance = axios.create({
     withCredentials: true,

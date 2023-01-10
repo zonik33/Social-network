@@ -2,13 +2,10 @@
  margin: 10px;
 }
 .pageNumber{
-    padding: 22px;
+    padding: 3px;
     border: 1px solid grey;
 }
-.selectPage {
+.pageNumber.selectPage{
     font-weight: bold;
-    cursor: pointer;
-}
-.currentPage {
-    border: 1px solid grey;
+    border-color: black;
 }
