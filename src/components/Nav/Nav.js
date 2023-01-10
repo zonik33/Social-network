@@ -1,6 +1,5 @@
-import { NavLink } from "react-router-dom";
+import {NavLink} from "react-router-dom";
 import s from "./Nav.module.css";
-import friendCheker from './FriendChecker';
 
 const Nav = (props) => {
   return (

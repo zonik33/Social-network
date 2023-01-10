@@ -1,5 +1,4 @@
 import s from "./ProfileInfo.module.css";
-import ProfileStatus from "./ProfileStatus";
 import React from "react";
 import Preloader from "../../common/Preloader/Preloader";
 import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
